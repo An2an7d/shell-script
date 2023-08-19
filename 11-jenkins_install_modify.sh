@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
-DATE=$(date +%F)
+DATE=$(date +%F-%H-%M-%S)
 LOG="jekins_install-${DATE}.log"
 R="\e[31m"
 G="\e[32m"
