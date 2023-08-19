@@ -7,5 +7,5 @@ done
 
 for j in $@
 do
-    yum install j -y
+    yum install $j -y
 done
