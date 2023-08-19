@@ -1,7 +1,7 @@
 #!bin/bash
 
-DATE=$(date)
-echo "execution started at $DATE"
+SDATE=$(date)
+echo "execution started at $SDATE"
 
 echo -n "Enter Username:"
 read -s USERNAME
@@ -16,4 +16,5 @@ echo
 echo "Username: ${USERNAME}"
 echo "password: ${PASSWORD}"
 
-echo "execution ended at $DATE"
+EDATE=$(date)
+echo "execution ended at $EDATE"
