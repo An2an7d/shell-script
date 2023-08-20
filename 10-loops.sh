@@ -51,6 +51,5 @@ do
         VALIDATE $? $j
     else
         echo -e "$Y $j is already installed $N"
-        exit 1
     fi
 done
