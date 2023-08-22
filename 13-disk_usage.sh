@@ -1,7 +1,9 @@
 #!/bin/bash
 LOGDIR=/tmp
 DATE=$(date +%F:%H:%M:%S)
+echo "$0"
 SCRIPT_NAME=$(basename "$0" | sed 's/[^A-Za-z0-9_.-]/_/g')
+echo "$SCRIPT_NAME"
 LOGFILE=$LOGSDIR/$SCRIPT_NAME-$DATE.log
 
 R="\e[31m"
@@ -27,4 +29,4 @@ do
     fi
 done <<< $DISK_USAGE
 #echo "$message" | mail -s "High Disk Usage" venkatanandn@gmail.com
-sh mail.sh venkatanandn@gmail.com "High Disk Usage" "$message" "DEVOPS TEAM" "High Disk usage"
+#sh mail.sh venkatanandn@gmail.com "High Disk Usage" "$message" "DEVOPS TEAM" "High Disk usage"
