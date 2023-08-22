@@ -18,7 +18,7 @@ algorithm
 LOGDIR=/home/centos/log_files
 SCRIPTNAME=$0
 DATE=$(date +%F-%H-%M-%S)
-logfile=$LOGDIR/$0-$DATE.log
+logfile=$LOGDIR/$-$DATE.log
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
