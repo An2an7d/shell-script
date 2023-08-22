@@ -11,7 +11,7 @@ Y="\e[33m"
 
 DISK_USAGE=$(df -hT | grep -vE 'tmpfs|Filesystem')
 DISK_USAGE_THRESHOLD=1
-MESSAGE=""
+message=""
 
 #IFS= means internal feild seperator is space.
 while IFS= read line
@@ -22,7 +22,7 @@ do
     partition=$(echo $line | awk '{print$1}')
     if [ $usage -gt $DISK_USAGE_THRESHOLD ]
     then
-        MESSAGE+="High Disk Usage on $partition: $usage\n"
+        message+="High Disk Usage on $partition: $usage\n"
     fi
 done <<< $DISK_USAGE
 echo "message: $message"
