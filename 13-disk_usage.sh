@@ -9,7 +9,7 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-DISK_USAGE=df -hT | grep -vE 'tmpfs|Filesystem'
+DISK_USAGE=$(df -hT | grep -vE 'tmpfs|Filesystem')
 DISK_USAGE_THRESHOLD=1
 MESSAGE=""
 
@@ -20,7 +20,7 @@ do
     usage=$(echo $line | awk '{print$6}' | cut -d % -f1)
      # this command will give us partition
     partition=$(echo $line | awk '{print$1}')
-    if [ usage -gt DISK_USAGE_THRESHOLD ]
+    if [ $usage -gt $DISK_USAGE_THRESHOLD ]
     then
         MESSAGE+="High Disk Usage on $partition: $usage\n"
     fi
