@@ -25,6 +25,3 @@ do
     echo $nline >> $PWD/test/reverse.txt
     nline=''
 done < file.txt
-
-# write a script that reads a text file and generates a list of words with
-# their frequencies. Bonus points for sorting the list by frequency.
