@@ -21,10 +21,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ];
     then
-        echo -e "Installing $2... $R Failure $N"
+        echo -e "$2... $R Failure $N"
         exit 1
     else
-        echo -e "Installing $2... $G Success $N"
+        echo -e "$2... $G Success $N"
     fi
 }
 
@@ -69,7 +69,7 @@ echo "[smtp.gmail.com]:587 $USERNAME:$PASSWORD" >> /etc/postfix/sasl_passwd
 
 VALIDATE $? "Adding Gmail credentials for authentication"
 
-postmap /etc/postfix/sasl_passwd <<&LOGFILE
+postmap /etc/postfix/sasl_passwd &>> LOGFILE
 
 VALIDATE $? "creating a postfix lookup table"
 
