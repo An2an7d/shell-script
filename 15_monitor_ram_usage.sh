@@ -28,14 +28,15 @@ VALIDATE(){
     fi
 }
 
-total_ram=free -m | awk '/Mem:/ {print $2}'
-free_ram=free -m | awk '/Mem:/ {print $4}'
+total_ram=$( free -m | awk '/Mem:/ {print $2}' )
+free_ram=$( free -m | awk '/Mem:/ {print $4}' )
 ram_threshold=300
 message=""
 
-if [ $free_ram -lt $ram_threshold ]
-    then
-        echo -e "Total RAM: $total_ram\n Free RAM: $free_ram" >> $message
-        message+="RAM is below threshold limit. Please make necessary changes"
-    fi
+if [ "$free_ram" -lt "$ram_threshold" ]; then
+    message+="Total RAM: $total_ram"$'\n'
+    message+="Free RAM: $free_ram"$'\n'
+    message+="RAM is below threshold limit. Please make necessary changes"
+fi
+
 echo "$message" | mail -s "Critical RAM" venkatanandn@gmail.com
