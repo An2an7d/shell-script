@@ -26,7 +26,7 @@ for ((i=0; i<${#NAMES[@]}; i++)); do
                 "Changes": [{
                 "Action": "CREATE",
                             "ResourceRecordSet": {
-                                        "Name": "'a.$DOMAIN_NAME'",
+                                        "Name": "'$name.$DOMAIN_NAME'",
                                         "Type": "A",
                                         "TTL": 300,
                                     "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
